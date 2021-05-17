@@ -1,11 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MultiplyIt</title>
 </head>
-<body>       
+
+<body> 
+    <div id = "Container"></div>
+    <script type="text/babel">
+
+        class Ques extends React.Component{
+
+            constructor(props){
+                super(props);
+                
+                this.state = {
+                    num1: Math.ceil(Math.random()*10),
+                    num2: Math.ceil(Math.random()*10),
+                    response: '',
+                    score: 0
+                };
+            }
+            
+            render(){
+                    return(
+                        <div id = "Reactcontainer">
+                            <div id = "Question">{this.state.num1} X {this.state.num2}</div>
+                            
+                        </div>
+                    );
+                }
+            
+        }
+
+    </script>      
 </body>
 </html>
