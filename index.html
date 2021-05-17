@@ -23,7 +23,8 @@
                     num1: Math.ceil(Math.random()*10),
                     num2: Math.ceil(Math.random()*10),
                     response: '',
-                    score: 0
+                    score: 0,
+                    attempts: 0
                 };
             }
             
@@ -38,7 +39,8 @@
                     }
 
                     this.setState({
-                        response: ''
+                        response: '',
+                        attempts: this.state.attempts + 1
                     });
                 }    
             }
@@ -54,13 +56,13 @@
                         <div id = "Reactcontainer">
                             <div id = "Question">{this.state.num1} X {this.state.num2}</div>
                             <input onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "text" value = {this.state.response}/>
-                            <div id = "Score">{this.state.score}</div>
+                            <div id = "Score">Score: {this.state.score}/{this.state.attempts}</div>
                         </div>
                     );
                 }       
         }
         
         ReactDOM.render(<Ques />, document.querySelector("#Container"));
-    </script>      
+    </script>
 </body>
 </html>
