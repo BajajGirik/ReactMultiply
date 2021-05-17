@@ -27,17 +27,26 @@
                 };
             }
             
+            updateIt = event => {
+                if(event.key === 'Enter'){
+                    if(this.state.num1 + this.state.num2 === parseInt(this.state.response))
+                    {
+                       
+                    }
+                }
+            }
+
             render(){
                     return(
                         <div id = "Reactcontainer">
                             <div id = "Question">{this.state.num1} X {this.state.num2}</div>
-                            
+                            <input onKeyPress = {this.updateIt} type = "text" value = {this.state.response}/>
                         </div>
                     );
-                }
-            
+                }       
         }
-
+        
+        ReactDOM.render(<Ques />, document.querySelector("#Container"));
     </script>      
 </body>
 </html>
