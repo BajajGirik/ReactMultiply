@@ -61,8 +61,15 @@ body {
 }
 
 #Main #Ans {
-  font-size: 50px;
-  padding: 10px;
+  font-size: 40px;
+  width: 200px;
+  color: green;
+  text-align: center;
+  font-weight: 800;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  outline: none;
 }
 
 #Footer {
