@@ -57,16 +57,16 @@
                         <div id = "Reactcontainer">
                             <div id = "Navbar">
                                 <p id = "Logo">MultiplyIt</p>
-                                <p>Score: {this.state.score}</p>
                                 <nav>
                                     <button>Easy</button>
                                     <button>Hard</button>
-                                </nav>
+                                </nav>   
                             </div>
                             <div id = "Main">
                                 <div id = "Question">{this.state.num1} X {this.state.num2}</div>
                                 <input onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "text" value = {this.state.response}/>
                             </div>
+                            <div id = "Footer">Score: {this.state.score}</div>
                         </div>
                     );
                 }       

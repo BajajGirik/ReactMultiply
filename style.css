@@ -7,16 +7,19 @@ body {
   color: white;
   padding: 10px;
   display: flex;
+  flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
 #Logo {
+  color: pink;
   font-family: cursive;
   font-size: 18px;
   font-weight: 700;
   font-style: italic;
 }
+
 #Navbar nav button {
   background-color: inherit;
   color: white;
