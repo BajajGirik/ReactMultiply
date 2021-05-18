@@ -24,6 +24,7 @@
                     num1: Math.ceil(Math.random()*10),
                     num2: Math.ceil(Math.random()*9),
                     multiplier: 10,
+                    mode: "HARD",
                     response: '',
                     score: 0,
                     attempts: 0
@@ -55,8 +56,11 @@
             
             toughness = event => {
                 this.setState ({
-                    multiplier: parseInt(event.target.dataset.tough)
+                    multiplier: parseInt(event.target.dataset.tough),
+                    mode: event.target.dataset.mode
                 });
+                window.location = "./index.html";
+                
             }
 
             render(){
@@ -65,15 +69,18 @@
                             <div id = "Navbar">
                                 <p id = "Logo">MultiplyIt</p>
                                 <nav>
-                                    <button data-tough = "5" onClick = {this.toughness}>Easy</button>
-                                    <button data-tough = "10" onClick = {this.toughness}>Hard</button>
+                                    <button data-mode = "EASY" data-tough = "5" onClick = {this.toughness}>Easy</button>
+                                    <button data-mode = "HARD" data-tough = "10" onClick = {this.toughness}>Hard</button>
                                 </nav>   
                             </div>
                             <div id = "Main">
                                 <div id = "Question">{this.state.num1} X {this.state.num2}</div>
                                 <input id = "Ans" onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "text" value = {this.state.response} autofocus = "autofocus"/>
                             </div>
-                            <div id = "Footer">Score: {this.state.score}</div>
+                            <div id = "Footer">
+                                <p>Score: {this.state.score}</p>
+                                <p>MODE: {this.state.mode}</p>
+                            </div>
                         </div>
                     );
                 }       
