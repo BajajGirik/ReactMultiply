@@ -15,14 +15,14 @@ body {
 #Navbar {
   background-color: rgba(26, 24, 24, 0.89);
   color: white;
-  padding: 10px;
+  padding: 10px 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
 }
 
-#Logo {
+#Navbar #Logo {
   color: pink;
   font-family: cursive;
   font-size: 18px;
@@ -41,6 +41,14 @@ body {
   height: inherit;
   padding: 13px;
   margin: 3px;
+  cursor: pointer;
+  transition: background 0.75s;
+  transition-timing-function: ease-in;
+}
+
+#Navbar nav button:hover {
+  background: red;
+  font-weight: 500;
 }
 
 #Main {
@@ -63,7 +71,7 @@ body {
 #Main #Ans {
   font-size: 50px;
   width: 200px;
-  color: red;
+  color: greenyellow;
   text-align: center;
   text-shadow: 0 0 5px blue, 0 0 2px darkblue;
   padding: 5px;
