@@ -1,0 +1,12 @@
+body {
+  margin: 0px;
+}
+
+#Navbar {
+  background-color: rgba(26, 24, 24, 0.89);
+  color: white;
+  padding: 15px 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
