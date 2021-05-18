@@ -5,10 +5,29 @@ body {
 #Navbar {
   background-color: rgba(26, 24, 24, 0.89);
   color: white;
-  padding: 15px 15px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+#Logo {
+  font-family: cursive;
+  font-size: 18px;
+  font-weight: 700;
+  font-style: italic;
+}
+#Navbar nav button {
+  background-color: inherit;
+  color: white;
+  font-size: 14px;
+  font-family: sans-serif;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+  height: inherit;
+  padding: 13px;
+  margin: 3px;
 }
 
 #Main {
