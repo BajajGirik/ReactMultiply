@@ -10,3 +10,8 @@ body {
   justify-content: space-between;
   align-items: center;
 }
+
+#Main {
+  margin: 20px;
+  text-align: center;
+}

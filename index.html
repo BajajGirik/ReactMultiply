@@ -63,8 +63,10 @@
                                     <button>Hard</button>
                                 </nav>
                             </div>
-                            <div id = "Question">{this.state.num1} X {this.state.num2}</div>
-                            <input onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "text" value = {this.state.response}/>
+                            <div id = "Main">
+                                <div id = "Question">{this.state.num1} X {this.state.num2}</div>
+                                <input onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "text" value = {this.state.response}/>
+                            </div>
                         </div>
                     );
                 }       
