@@ -21,10 +21,10 @@
                 super(props);
                 
                 this.state = {
-                    num1: Math.ceil(Math.random()*10),
+                    num1: Math.ceil(Math.random()*5),
                     num2: Math.ceil(Math.random()*9),
-                    multiplier: 10,
-                    mode: "HARD",
+                    multiplier: 5,
+                    mode: "EASY",
                     response: '',
                     score: 0,
                     attempts: 0
@@ -55,12 +55,18 @@
                 } 
             
             toughness = event => {
+                const mul = parseInt(event.target.dataset.tough);
                 this.setState ({
-                    multiplier: parseInt(event.target.dataset.tough),
-                    mode: event.target.dataset.mode
+                    multiplier: mul,
+                    num1: Math.ceil(Math.random()*mul),
+                    num2: Math.ceil(Math.random()*9),
+                    mode: event.target.dataset.mode,
+                    response: '',
+                    score: 0,
+                    attempts: 0
                 });
-                window.location = "./index.html";
-                
+
+                document.querySelector("#Ans").focus();
             }
 
             render(){
@@ -75,10 +81,10 @@
                             </div>
                             <div id = "Main">
                                 <div id = "Question">{this.state.num1} X {this.state.num2}</div>
-                                <input id = "Ans" onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "text" value = {this.state.response} autofocus = "autofocus"/>
+                                <input id = "Ans" onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "number" value = {this.state.response} autofocus = "autofocus"/>
                             </div>
                             <div id = "Footer">
-                                <p>Score: {this.state.score}</p>
+                                <p>Score: {this.state.score} / {this.state.attempts}</p>
                                 <p>MODE: {this.state.mode}</p>
                             </div>
                         </div>

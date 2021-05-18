@@ -23,7 +23,7 @@ body {
 }
 
 #Navbar #Logo {
-  color: pink;
+  color: red;
   font-family: cursive;
   font-size: 18px;
   font-weight: 700;
@@ -52,6 +52,7 @@ body {
 }
 
 #Main {
+  background-color: violet;
   padding: 25px;
   text-align: center;
   display: flex;
@@ -93,5 +94,5 @@ body {
 }
 
 #Footer p {
-  margin: 0px 10px;
+  margin: 0px;
 }
