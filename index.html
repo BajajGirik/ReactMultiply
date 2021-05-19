@@ -70,13 +70,34 @@
             }
 
             render(){
-                if(this.state.attempts >= 2) { 
-                    return(
-                    <div id = "Result">
-                        <p>{this.state.result}</p>
-                        <p>Result: {this.state.score} / {this.state.attempts}</p>
-                    </div>
-                    );
+                if(this.state.attempts >= 10) {
+                    if(this.state.score >= 7){ 
+                        return(
+                        <div id = "Result" data-bg = "green" onLoad = {this.resultIt}>
+                            <p>Good</p>
+                            <p>Result: {this.state.score} / {this.state.attempts}</p>
+                        </div>
+                        );
+                    }
+
+                    else if(this.state.score >= 4){ 
+                        return(
+                        <div id = "Result" data-bg = "yellow" onLoad = {this.resultIt}>
+                            <p>Fair</p>
+                            <p>Result: {this.state.score} / {this.state.attempts}</p>
+                        </div>
+                        );
+                    }
+
+                    else{ 
+                        return(
+                        <div id = "Result" data-bg = "red" onLoad = {this.resultIt}>
+                            <p>Better Luck Next Time</p>
+                            <p>Result: {this.state.score} / {this.state.attempts}</p>
+                        </div>
+                        );
+                    }
+
                 }
                 return(
                     <div id = "Reactcontainer">
