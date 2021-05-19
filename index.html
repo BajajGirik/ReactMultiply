@@ -28,8 +28,6 @@
                     response: '',
                     score: 0,
                     attempts: 0,
-                    result: '',
-                    bgcolor: ''
                 };
             }
             
@@ -71,35 +69,14 @@
                 document.querySelector("#Ans").focus();
             }
 
-            resultIt = () => {
-                if(this.state.score >= 7)
-                {
-                    this.setState({
-                        result: 'Good',
-                        bgcolor: 'green'
-                    });
-                }
-
-                else if(this.state.score >= 4 )
-                {
-                    this.setState({
-                        result: 'Fair',
-                        bgcolor: 'yellow'
-                    });
-                }
-
-                else
-                {
-                    this.setState({
-                        result: 'Better Luck Next Time',
-                        bgcolor: 'red'
-                    });
-                }
-            }
-
             render(){
-                if(this.state.attempts >= 10){
-                    
+                if(this.state.attempts >= 2) { 
+                    return(
+                    <div id = "Result">
+                        <p>{this.state.result}</p>
+                        <p>Result: {this.state.score} / {this.state.attempts}</p>
+                    </div>
+                    );
                 }
                 return(
                     <div id = "Reactcontainer">
