@@ -69,17 +69,11 @@
                 document.querySelector("#Ans").focus();
             }
 
-            resultIt =() => {
-                console.log(document.querySelector('.Result'));
-                document.body.style.backgroundColor = "red";
-            }
-
             render(){
                 if(this.state.attempts >= 10) {
-                    this.resultIt();
                     if(this.state.score >= 7){ 
                         return(
-                        <div className = "Result" data-bgcolor = "green">
+                        <div className = "Result" style = {{backgroundColor: "green"}}>
                             <p>Good</p>
                             <p>Result: {this.state.score} / {this.state.attempts}</p>
                         </div>
@@ -88,7 +82,7 @@
 
                     else if(this.state.score >= 4){ 
                         return(
-                        <div className = "Result" data-bgcolor = "yellow">
+                        <div className = "Result" style = {{backgroundColor: "yellow"}}>
                             <p>Fair</p>
                             <p>Result: {this.state.score} / {this.state.attempts}</p>
                         </div>
@@ -97,13 +91,12 @@
 
                     else{ 
                         return(
-                        <div className = "Result" data-bgcolor = "red">
+                        <div className = "Result" style = {{backgroundColor: "red"}}>
                             <p>Better Luck Next Time</p>
                             <p>Result: {this.state.score} / {this.state.attempts}</p>
                         </div>
                         );
                     }
-
                 }
                 return(
                     <div id = "Reactcontainer">
