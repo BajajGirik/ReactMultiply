@@ -106,12 +106,24 @@ body {
 }
 
 @keyframes grow {
-  0%{
+  0% {
+    opacity: 1;
     font-size: 0px;
-    font-weight: 100;
+    font-weight: 300;
   }
-  100%{
+  100% {
+    opacity: 1;
     font-size: 50px;
     font-weight: 700;
   }
+}
+
+.Result p {
+  opacity: 0;
+  color: black;
+  animation-name: grow;
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-timing-function: ease-in;
 }
