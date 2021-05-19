@@ -27,7 +27,9 @@
                     mode: "EASY",
                     response: '',
                     score: 0,
-                    attempts: 0
+                    attempts: 0,
+                    result: '',
+                    bgcolor: ''
                 };
             }
             
@@ -63,31 +65,60 @@
                     mode: event.target.dataset.mode,
                     response: '',
                     score: 0,
-                    attempts: 0
+                    attempts: 0,
                 });
 
                 document.querySelector("#Ans").focus();
             }
 
+            resultIt = () => {
+                if(this.state.score >= 7)
+                {
+                    this.setState({
+                        result: 'Good',
+                        bgcolor: 'green'
+                    });
+                }
+
+                else if(this.state.score >= 4 )
+                {
+                    this.setState({
+                        result: 'Fair',
+                        bgcolor: 'yellow'
+                    });
+                }
+
+                else
+                {
+                    this.setState({
+                        result: 'Better Luck Next Time',
+                        bgcolor: 'red'
+                    });
+                }
+            }
+
             render(){
-                    return(
-                        <div id = "Reactcontainer">
-                            <div id = "Navbar">
-                                <p id = "Logo">MultiplyIt</p>
-                                <nav>
-                                    <button data-mode = "EASY" data-tough = "5" onClick = {this.toughness}>Easy</button>
-                                    <button data-mode = "HARD" data-tough = "10" onClick = {this.toughness}>Hard</button>
-                                </nav>   
-                            </div>
-                            <div id = "Main">
-                                <div id = "Question">{this.state.num1} X {this.state.num2}</div>
-                                <input id = "Ans" onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "number" value = {this.state.response} autofocus = "autofocus"/>
-                            </div>
-                            <div id = "Footer">
-                                <p>Score: {this.state.score} / {this.state.attempts}</p>
-                                <p>MODE: {this.state.mode}</p>
-                            </div>
+                if(this.state.attempts >= 10){
+                    
+                }
+                return(
+                    <div id = "Reactcontainer">
+                        <div id = "Navbar">
+                            <p id = "Logo">MultiplyIt</p>
+                            <nav>
+                                <button data-mode = "EASY" data-tough = "5" onClick = {this.toughness}>Easy</button>
+                                <button data-mode = "HARD" data-tough = "10" onClick = {this.toughness}>Hard</button>
+                            </nav>   
                         </div>
+                        <div id = "Main">
+                            <div id = "Question">{this.state.num1} X {this.state.num2}</div>
+                            <input id = "Ans" onKeyPress = {this.updateIt}  onChange = {this.changeIt} type = "number" value = {this.state.response} autofocus = "autofocus"/>
+                        </div>
+                        <div id = "Footer">
+                            <p>Score: {this.state.score} / {this.state.attempts}</p>
+                            <p>MODE: {this.state.mode}</p>
+                        </div>
+                    </div>
                     );
                 }       
         }
