@@ -69,16 +69,17 @@
                 document.querySelector("#Ans").focus();
             }
 
-            resultIt = event => {
-                
-                document.body.style.backgroundColor = document.querySelector(".Result").dataset.bg;
+            resultIt =() => {
+                console.log(document.querySelector('.Result'));
+                document.body.style.backgroundColor = "red";
             }
 
             render(){
                 if(this.state.attempts >= 10) {
+                    this.resultIt();
                     if(this.state.score >= 7){ 
                         return(
-                        <div class = "Result" data-bg = "green" onLoad = {this.resultIt}>
+                        <div className = "Result" data-bgcolor = "green">
                             <p>Good</p>
                             <p>Result: {this.state.score} / {this.state.attempts}</p>
                         </div>
@@ -87,7 +88,7 @@
 
                     else if(this.state.score >= 4){ 
                         return(
-                        <div class = "Result" data-bg = "yellow" onLoad = {this.resultIt}>
+                        <div className = "Result" data-bgcolor = "yellow">
                             <p>Fair</p>
                             <p>Result: {this.state.score} / {this.state.attempts}</p>
                         </div>
@@ -96,7 +97,7 @@
 
                     else{ 
                         return(
-                        <div class = "Result" data-bg = "red" onLoad = {this.resultIt}>
+                        <div className = "Result" data-bgcolor = "red">
                             <p>Better Luck Next Time</p>
                             <p>Result: {this.state.score} / {this.state.attempts}</p>
                         </div>
