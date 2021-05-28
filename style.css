@@ -52,7 +52,15 @@ body {
 }
 
 #Main {
-  background-color: violet;
+  background: linear-gradient(
+    Red,
+    Orange,
+    Yellow,
+    Green,
+    rgb(33, 33, 238),
+    Indigo,
+    Violet
+  );
   padding: 25px;
   text-align: center;
   display: flex;
