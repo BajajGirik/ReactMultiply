@@ -22,12 +22,13 @@
                 
                 this.state = {
                     num1: Math.ceil(Math.random()*5),
-                    num2: Math.ceil(Math.random()*9),
+                    num2: 2 + Math.ceil(Math.random()*7),
                     multiplier: 5,
                     mode: "EASY",
                     response: '',
                     score: 0,
                     attempts: 0,
+                    add: 0
                 };
             }
             
@@ -35,8 +36,8 @@
                 if(event.key === 'Enter'){
                     if(this.state.num1*this.state.num2 === parseInt(this.state.response)){
                        this.setState({
-                            num1: Math.ceil(Math.random()*this.state.multiplier),
-                            num2: Math.ceil(Math.random()*9),
+                            num1: this.state.add + Math.ceil(Math.random()*this.state.multiplier),
+                            num2: 2 + Math.ceil(Math.random()*7),
                             score: this.state.score+1
                            });
                     }
@@ -56,14 +57,16 @@
             
             toughness = event => {
                 const mul = parseInt(event.target.dataset.tough);
+                const addition = parseInt(event.target.dataset.add);
                 this.setState ({
                     multiplier: mul,
-                    num1: Math.ceil(Math.random()*mul),
-                    num2: Math.ceil(Math.random()*9),
+                    num1: addition + Math.ceil(Math.random()*mul),
+                    num2: 2 + Math.ceil(Math.random()*7),
                     mode: event.target.dataset.mode,
                     response: '',
                     score: 0,
                     attempts: 0,
+                    add: addition
                 });
 
                 document.querySelector("#Ans").focus();
@@ -103,10 +106,10 @@
                         <div id = "Navbar">
                             <p id = "Logo">MultiplyIt</p>
                             <nav>
-                                <button data-mode = "EASY" data-tough = "5" onClick = {this.toughness}>Easy</button>
-                                <button data-mode = "MEDIUM" data-tough = "10" onClick = {this.toughness}>Medium</button>
-                                <button data-mode = "HARD" data-tough = "15" onClick = {this.toughness}>Hard</button>
-                                <button data-mode = "MASTER" data-tough = "20" onClick = {this.toughness}>Master</button>
+                                <button data-mode = "EASY" data-tough = "5" data-add = "0" onClick = {this.toughness}>Easy</button>
+                                <button data-mode = "MEDIUM" data-tough = "7" data-add = "3" onClick = {this.toughness}>Medium</button>
+                                <button data-mode = "HARD" data-tough = "9" data-add = "6" onClick = {this.toughness}>Hard</button>
+                                <button data-mode = "MASTER" data-tough = "9" data-add = "11" onClick = {this.toughness}>Master</button>
                             </nav>   
                         </div>
                         <div id = "Main">
